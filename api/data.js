@@ -22,8 +22,7 @@ export default async function handler(req, res) {
         AND c.status = 'active'
         AND g.status = 'active'
       GROUP BY a.id, a.name
-      ORDER BY total_grades DESC
-      LIMIT 1;
+      ORDER BY total_grades DESC;
     `;
 
     const { rows } = await pool.query(query);
