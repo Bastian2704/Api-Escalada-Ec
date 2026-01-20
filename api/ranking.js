@@ -8,6 +8,7 @@ const pool = new Pool({
 
 export default async function handler(req, res) {
   try {
+        res.setHeader('Cache-Control', 'no-store');
     const query = `
       WITH all_grades AS (
         SELECT u.id AS user_id, u.username, 'sport' AS discipline, cls.scaled_value

@@ -8,6 +8,8 @@ const pool = new Pool({
 
 export default async function handler(req, res) {
   try {
+    res.setHeader('Cache-Control', 'no-store');
+
     const query = `
       SELECT
         a.id,
